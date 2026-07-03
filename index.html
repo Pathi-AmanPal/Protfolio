@@ -10,14 +10,23 @@
 
 <body>
     <nav>
+        <!-- Scroll progress indicator -->
+        <div class="scroll-progress" id="scroll-progress"></div>
+        
         <a href="#hero" class="logo-link"><img src="images/image2.png" alt="Pathi Aman Pal Logo" class="logo-img"></a>
-        <div class="nav-links">
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contacts">Contact</a>
+        
+        <div class="nav-links" id="nav-links">
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#contacts" class="nav-item">Contact</a>
         </div>
 
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
     <section id="hero">
         <div class="hero-container">
@@ -219,6 +228,82 @@
                 lightbox.classList.remove('active');
                 document.body.style.overflow = '';
             }
+        });
+
+        // --- NEW: Scroll Progress Indicator ---
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            progressBar.style.width = scrolled + '%';
+        });
+
+        // --- NEW: Mobile Toggle Drawer Menu ---
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-menu-open');
+        });
+
+        // Auto-close menu when clicking outside or clicking any nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('nav-menu-open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== navToggle) {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('nav-menu-open');
+            }
+        });
+
+        // --- NEW: Scrollspy / Active Section Tracking ---
+        const sections = document.querySelectorAll('section, footer');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+            sections.forEach(section => {
+                let sectionTop = section.offsetTop;
+                const id = section.getAttribute('id');
+
+                // Adjust skills offset for desktop side-by-side layout
+                if (id === 'skills' && window.innerWidth > 950) {
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        sectionTop = aboutSection.offsetTop + (aboutSection.clientHeight / 2);
+                    }
+                }
+
+                if (scrollPos >= (sectionTop - 120)) {
+                    current = id;
+                }
+            });
+
+            // If we are at the bottom of the page, force highlight Contacts link
+            const bottomOfWindow = (window.innerHeight + scrollPos) >= document.documentElement.scrollHeight - 50;
+            if (bottomOfWindow) {
+                current = 'contacts';
+            }
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
