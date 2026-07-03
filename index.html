@@ -10,73 +10,202 @@
 
 <body>
     <nav>
-        <a href="#hero">Pathi Aman Pal</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contacts">Contact</a>
-
+        <a href="#hero" class="logo-link"><img src="images/image2.png" alt="Pathi Aman Pal Logo" class="logo-img"></a>
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contacts">Contact</a>
+        </div>
 
     </nav>
     <section id="hero">
-        <h1>Hi I'm Pathi Aman Pal</h1>
-        <h2>Aspiring full-stack developer building real projects</h2>
-        <a href="#projects">Explore Projects</a>
-        <a href="#contacts">Contact me </a>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Hi, I'm<br>Pathi Aman Pal</h1>
+                <p>Aspiring <span class="accent-text">full-stack developer </span>building real projects
+                    <br>I build <span class="bold-text">secure</span>, <span class="bold-text">scalable</span> web
+                    applications and <span class="bold-text">AI-powered tools</span> that solve real problems.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects">Explore Projects</a>
+                    <a href="#contacts">Contact me </a>
+                </div>
+            </div>
+            <!-- Decorative background elements -->
+            <div class="hero-decorations">
+                <span class="decor-line line-1"></span>
+                <span class="decor-line line-2"></span>
+                <span class="decor-line line-3"></span>
+                <span class="decor-line line-4"></span>
+                <span class="decor-line line-5"></span>
+                <span class="decor-line line-6"></span>
+                <span class="decor-line line-7"></span>
+                <span class="decor-dot dot-1"></span>
+                <span class="decor-dot dot-2"></span>
+                <span class="decor-dot dot-3"></span>
+                <span class="decor-dot dot-4"></span>
+                <span class="decor-dot dot-5"></span>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/image.png" alt="Pathi Aman Pal">
+            </div>
+        </div>
 
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
+        <div class="project-grid">
+            <article class="project-card">
+                <div class="project-image-container">
+                    <img src="images/saas-backend.png" alt="Multi Tenant SaaS Backend">
+                </div>
+                <div class="project-card-content">
+                    <h3>Multi Tenant SaaS Backend</h3>
+                    <p>Multi-tenant SaaS backend with UUID-based tenant isolation, middleware-driven request scoping, FK
+                        constraints, and indexed tenant queries.</p>
+                    <p class="project-tech">Tech stack: Node.js, Express, PostgreSQL, JWT</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Pathi-AmanPal/multi-tenant-saas">View code</a>
+                    </div>
+                </div>
+            </article>
 
-        <article class="project-card">
-            <!--<img src="" alt="">-->
-            <h3>Multi Tenant SaaS Backend</h3>
-            <p>Multi-tenant SaaS backend with UUID-based tenant isolation, middleware-driven request scoping, FK
-                constraints, and indexed tenant queries.</p>
-            <p>Tech stack: Node.js, Express, PostgreSQL, JWT</p>
-            <a href="https://github.com/Pathi-AmanPal/multi-tenant-saas">View code</a>
-        </article>
-
-        <article class="project-card">
-            <!--<img src="" alt="">-->
-            <h3>APK Sentinel</h3>
-            <p>An advanced, GenAI-powered Android APK threat assessment platform combining deep static decompilation,
-                real-time dynamic behavior tracing, semantic vector similarity indexing, and multi-pillar threat
-                categorization.</p>
-            <p>Tech stack: JavaScript, HTML, CSS, Gemini API</p>
-            <a href="https://apk-sentinel.vercel.app/">Live demo</a>
-            <a href="https://github.com/Pathi-AmanPal/apk-sentinel">View code</a>
-        </article>
+            <article class="project-card">
+                <div class="project-image-container">
+                    <img src="images/apk-sentinel.png" alt="APK Sentinel">
+                </div>
+                <div class="project-card-content">
+                    <h3>APK Sentinel</h3>
+                    <p>An advanced, GenAI-powered Android APK threat assessment platform combining deep static
+                        decompilation,
+                        real-time dynamic behavior tracing, semantic vector similarity indexing, and multi-pillar threat
+                        categorization.</p>
+                    <p class="project-tech">Tech stack: JavaScript, HTML, CSS, Gemini API</p>
+                    <div class="project-links">
+                        <a href="https://apk-sentinel.vercel.app/">Live demo</a>
+                        <a href="https://github.com/Pathi-AmanPal/apk-sentinel">View code</a>
+                    </div>
+                </div>
+            </article>
+        </div>
     </section>
+    <div class="about-skills-wrapper">
+        <section id="about">
+            <span class="section-subtitle">Who I Am</span>
+            <h2>About me</h2>
+            <p>I'm a third-year CSE student at Chandigarh University specializing in cybersecurity. Right now I'm
+                building
+                toward a career in full-stack development, focusing on Node.js and React, while strengthening my
+                JavaScript
+                fundamentals from the ground up. I learn best by building real things and understanding them deeply, not
+                just copying code that works.</p>
+        </section>
 
-    <section id="about">
-        <h2>About me</h2>
-        <p>I'm a third-year CSE student at Chandigarh University specializing in cybersecurity. Right now I'm building
-            toward a career in full-stack development, focusing on Node.js and React, while strengthening my JavaScript
-            fundamentals from the ground up. I learn best by building real things and understanding them deeply, not
-            just copying code that works.</p>
-
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Languages: Python, Java, C++</li>
-            <li>Web: HTML, CSS, JavaScript (learning)</li>
-            <li>Tools: Git, GitHub, Linux (Cybersecurity lab work)</li>
-        </ul>
-
-    </section>
-
+        <section id="skills">
+            <span class="section-subtitle">My Toolkit</span>
+            <h2>Skills</h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript (learning)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Linux (Cybersecurity lab)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <footer id="contacts">
-        <p>Get in touch</p>
-        <a href="mailto:amanpalpathi@gmail.com">Email</a>
-        <a href="https://github.com/Pathi-AmanPal">GitHub</a>
-        <a href="https://www.linkedin.com/in/pathi-aman-pal-068165320/">LinkedIn</a>
-        <p>Built with HTML, CSS, and JavaScript. Deployed on Vercel.</p>
+        <div class="footer-cta">
+            <span class="footer-subtitle">Say Hello</span>
+            <h2>Let's build something amazing together</h2>
+            <p>I'm always open to discussing new projects, cybersecurity research, or full-stack opportunities.</p>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/Pathi-AmanPal" target="_blank" rel="noopener noreferrer">
+                <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                GitHub
+            </a>
+            <a href="mailto:amanpalpathi@gmail.com">
+                <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/pathi-aman-pal-068165320/" target="_blank" rel="noopener noreferrer">
+                <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                LinkedIn
+            </a>
+        </div>
+        <hr class="footer-divider">
+        <p class="footer-credits">Built with HTML, CSS, and JavaScript. Deployed on Vercel.</p>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="image-lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged Project Screenshot">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <script>
+        // Lightbox modal logic
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        // Select all project card images
+        document.querySelectorAll('.project-image-container img').forEach(img => {
+            img.style.cursor = 'zoom-in'; // show zoom cursor on hover
+            img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.alt;
+                document.body.style.overflow = 'hidden'; // prevent scrolling behind modal
+            });
+        });
+
+        // Close lightbox when clicking the close button
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // restore scrolling
+        });
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === closeBtn) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
 </body>
 
 </html>
