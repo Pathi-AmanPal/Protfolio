@@ -644,6 +644,15 @@ nav a:hover {
         padding: 2rem 1.5rem;
         gap: 2rem;
     }
+
+    footer {
+        padding: 4rem 1.5rem 3rem 1.5rem;
+    }
+
+    footer a {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
 
 #about p {
@@ -732,8 +741,11 @@ footer {
 .footer-links {
     display: flex;
     flex-direction: row;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
     margin: 1rem 0;
+    width: 100%;
 }
 
 footer a {
